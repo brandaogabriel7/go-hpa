@@ -10,7 +10,7 @@ import (
 func reallySlowGreeting() string {
 	x := 0.0001
 	for i := 0; i <=1000000; i++ {
-		x = math.Sqrt(x)
+		x += math.Sqrt(x)
 	}
 	return "Code.education Rocks!"
 }
