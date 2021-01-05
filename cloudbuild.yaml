@@ -2,4 +2,5 @@ steps:
 
 - id: 'Run unit tests'
   name: 'gcr.io/cloud-builders/go'
-  args: ['GOPATH=.']
+  args: ['test', '.']
+  env: ['GOPATH=.']
