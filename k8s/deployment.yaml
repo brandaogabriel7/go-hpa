@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-hpa
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: go-hpa
+
+  template:
+    metadata:
+      labels:
+        app: go-hpa
+    spec:
+      containers:
+      - image: brandaogabriel7/go-challenge
+        name: go-hpa
+
+        ports:
+        - containerPort: 8080
+
+        resources:
+          requests:
+            cpu: "50m"
+          limits:
+            cpu: "100m"
